@@ -1,0 +1,15 @@
+label.my-label {
+	width: 100%;
+}
+
+.alert.alert-success.my-alert {
+	padding: 6px;
+    margin-bottom: 0;	
+    text-align: center;
+}
+
+.alert.alert-info.my-alert {
+	margin-top: 16px;
+    margin-bottom: 0;	
+    text-align: center;
+}

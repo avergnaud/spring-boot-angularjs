@@ -1,17 +1,23 @@
-CRUD avec Angularjs 
+CRUD avec Angularjs (persistence in memory)
 
 # build and run the app
 
 mvn spring-boot:run
 
-http://localhost:8090/api/personnes
+http://localhost:8090/
+
+# backend :
+
+http://localhost:8090/personnes
 
 Saisie d'une première personne :
 
-curl -X POST -H "Content-Type:application/json" -d '{ "prenom" : "Charles", "nom" : "Fourier" }' http://localhost:8090/api/personnes
+curl -X POST -H "Content-Type:application/json" -d '{ "prenom" : "Adrien" }' http://localhost:8090/personnes
 
-Requêtes :
+Personnes :
+
+http://localhost:8090/personnes
+
+# frontend :
 
 http://localhost:8090/
-
-http://localhost:8090/api/personnes

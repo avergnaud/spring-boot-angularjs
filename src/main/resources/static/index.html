@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./libs/bootstrap-css-only/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./mycss/style.css" />
+    <script type="text/javascript" src="./libs/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./libs/angular-resource/angular-resource.min.js"></script>
+  </head>
+  <body ng-app="myApp">
+    <div class="container" ng-controller="AppController">
+      <div class="row">
+	      <div class="col-xs-6">
+	        <h1>Spring-Boot AngularJS</h1>
+	      </div>
+		  <div class="alert alert-info my-alert col-xs-6" role="alert" ng-hide="personnes &amp;&amp; personnes.length > 0">
+		      	Aucune personne saisie
+		  </div>
+      </div>
+      <hr />
+      <form class="form-horizontal" role="form" ng-submit="addPersonne(newPersonne)">
+      	<div class="row">
+      		<div class="col-xs-4">
+		        <div class="input-group">
+			          <input type="text" class="form-control" ng-model="newPersonne" placeholder="Pr&eacute;nom..." />
+			          <span class="input-group-btn">
+			            <button class="btn btn-default" type="submit" ng-disabled="!newPersonne" title="Add">
+			              <span class="glyphicon glyphicon-plus"></span>
+			            </button>
+			          </span>
+		        </div>
+      		</div>
+      	</div>
+        <hr />
+        <div class="form-group" ng-repeat="personne in personnes">
+          <div class="col-xs-4">
+            <label class="my-label">
+	            <input type="text" class="form-control" ng-change="updatePersonne(personne, this)" ng-model="personne.prenom" />
+            </label>
+          </div>
+          <div class="col-xs-4">
+	          <div class="alert alert-success my-alert" role="alert" ng-model="message" ng-show="showMessage">
+		            Mise &agrave; jour <strong>r&eacute;ussie</strong>
+	          </div>
+          </div>
+          <div class="col-xs-4">
+            <button class="pull-right btn btn-danger" type="button" title="Delete"
+              ng-click="deletePersonne(personne)">
+              <span class="glyphicon glyphicon-trash"></span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.js"></script>
+    <script type="text/javascript" src="./app/app.js"></script>
+    <script type="text/javascript" src="./app/controllers.js"></script>
+    <script type="text/javascript" src="./app/services.js"></script>
+  </body>
+</html>
